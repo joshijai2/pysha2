@@ -75,6 +75,9 @@ class sha512(object):
             c = b
             b = a
             a = (t1 + t2) & 0xFFFFFFFFFFFFFFFF
+            print "Round"+str(i+1)
+            print [a,b,c,d,e,f,g,h]
+            print ""
 
         self._h = [(x+y) & 0xFFFFFFFFFFFFFFFF for x,y in zip(self._h, [a,b,c,d,e,f,g,h])]
 
